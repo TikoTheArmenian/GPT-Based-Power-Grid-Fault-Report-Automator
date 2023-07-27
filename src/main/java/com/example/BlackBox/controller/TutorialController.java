@@ -26,8 +26,6 @@ public class TutorialController {
 
     @PostMapping("/generate")
     public ResponseEntity<String> generateText(@RequestBody Map<String, String> prompt) {
-        System.out.println("1");
-        System.out.println(prompt.get("prompt"));
 
         try {
             // Use the OpenAIService to generate text from the OpenAI API

@@ -16,7 +16,7 @@ public class OpenAIService {
         logger.info("Starting text generation with prompt: " + prompt);
         try {
             String openaiUrl = "https://api.openai.com/v1/engines/davinci/completions";
-            String openaiKey = "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"; // Get this from your environment
+            String openaiKey = System.getenv("OPENAI_API_KEY");
 
             // Create the request body
             String body = "{ \"prompt\": \"" + prompt + "\", \"max_tokens\": 60 }";
