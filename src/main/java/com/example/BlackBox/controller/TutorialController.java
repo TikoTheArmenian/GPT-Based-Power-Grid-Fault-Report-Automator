@@ -25,16 +25,10 @@ public class TutorialController {
     OpenAIService openAIService;
 
     @PostMapping("/generate")
-    public ResponseEntity<String> generateText(@RequestBody Map<String, String> prompt) {
-
+    public ResponseEntity<String> generateText(@RequestBody Map<String, String> formData) {
         try {
-            // Use the OpenAIService to generate text from the OpenAI API
-            String openAIResponse = openAIService.generateText(prompt.get("prompt"));
-
-            // Process the OpenAI API response as needed
+            String openAIResponse = openAIService.generateText(formData);
             String processedResponse = processResponse(openAIResponse);
-
-            // Return the processed response
             return new ResponseEntity<>(processedResponse, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
