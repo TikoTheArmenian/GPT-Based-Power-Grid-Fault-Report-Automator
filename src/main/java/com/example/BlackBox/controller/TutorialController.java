@@ -1,19 +1,11 @@
 package com.example.BlackBox.controller;
 
-
-import java.util.Map;
-
+import com.example.BlackBox.model.FaultReport;
 import com.example.BlackBox.service.OpenAIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.bind.annotation.*;
+
 
 
 @CrossOrigin(origins = "http://localhost:8081")
@@ -25,11 +17,11 @@ public class TutorialController {
     OpenAIService openAIService;
 
     @PostMapping("/generate")
-    public ResponseEntity<String> generateText(@RequestBody Map<String, String> prompt) {
+    public ResponseEntity<String> generateText(@RequestBody FaultReport faultReport) {
 
         try {
             // Use the OpenAIService to generate text from the OpenAI API
-            String openAIResponse = openAIService.generateText(prompt.get("prompt"));
+            String openAIResponse = openAIService.generateText(faultReport);
 
             // Process the OpenAI API response as needed
             String processedResponse = processResponse(openAIResponse);
@@ -45,6 +37,4 @@ public class TutorialController {
     private String processResponse(String response) {
         return response;
     }
-
-
 }
