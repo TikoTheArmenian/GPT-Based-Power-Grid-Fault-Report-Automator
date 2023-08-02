@@ -1,12 +1,9 @@
-
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import HomePage from "./pages/homePage";
 
-import AddTutorial from "./components/AddTutorial";
-import Tutorial from "./components/Tutorial";
-import TutorialsList from "./components/TutorialsList";
-import OpenAIHandler from "./components/OpenAIHandler";
+import OpenAIHandler from "./components/Tarigma/OpenAIHandler";
 
 const App: React.FC = () => {
   return (
@@ -26,14 +23,12 @@ const App: React.FC = () => {
 
       <div className="container mt-3">
         <Routes>
-          <Route path="/" element={<OpenAIHandler/>} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/generate-report" element={<OpenAIHandler />} />
-          <Route path="/add" element={<AddTutorial/>} />
-          <Route path="/tutorials/:id" element={<Tutorial/>} />
         </Routes>
       </div>
     </div>
   );
-}
+};
 
 export default App;

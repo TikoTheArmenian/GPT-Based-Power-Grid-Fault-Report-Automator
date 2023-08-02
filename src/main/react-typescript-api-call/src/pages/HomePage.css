@@ -1,0 +1,57 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron {
+  text-align: center;
+  padding: 20px;
+  background-color: #48AFF0;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #f5f8fa;
+  border-top: 1px solid #eee;
+}
+
+.side-image {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  z-index: -1;
+}
+
+.left-image {
+  left: 0;
+}
+
+.right-image {
+  right: 0;
+}
